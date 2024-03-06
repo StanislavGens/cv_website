@@ -1,0 +1,356 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stanislav's Portfolio</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="stylesheet" href="{% static 'mediaqueries.css' %}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'assets/favicon/site.webmanifest' %}">
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">Stanislav</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">Обо мне</a></li>
+          <li><a href="#experience">Навыки</a></li>
+          <li><a href="#projects">Проекты</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">Stanislav</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">Обо мне</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Навыки</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Проекты</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Контакты</a></li>
+        </div>
+      </div>
+    </nav>
+    <section id="profile">
+      <div class="section__pic-container">
+        <img src="{% static '/assets/profile-pic2.jpg' %}" alt="Profile picture" />
+      </div>
+      <div class="section__text">
+        <p class="section__text__p1">Привет, Я</p>
+        <h1 class="title">Станислав</h1>
+        <p class="section__text__p2">Будущий сеньор :D</p>
+        <div class="btn-container">
+          <button
+            class="btn btn-color-2"
+            onclick="window.open('./assets/cv.pdf')"
+          >
+            Резюме
+          </button>
+          <button class="btn btn-color-1" onclick="location.href='./#contact'">
+            Связаться
+          </button>
+        </div>
+        <div id="socials-container">
+          <img
+            src="{% static '/assets/telegram.png' %}"
+            alt="My Telegram profile"
+            class="icon"
+            onclick="window.open('https://t.me/bmelanie_school', '_blank')"
+          />
+          <img
+            src="{% static '/assets/github.png' %}"
+            alt="My Github profile"
+            class="icon"
+            onclick="window.open('https://github.com/StanislavGens', '_blank')"
+          />
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <p class="section__text__p1">Больше</p>
+      <h1 class="title">Обо мне</h1>
+      <div class="section-container">
+        <div class="section__pic-container">
+          <!-- <img
+            src="./assets/about-pic.png"
+            alt="Profile picture"
+            class="about-pic"
+          />  -->
+          <video src="{% static 'assets/vid.webm' %}" autoplay loop muted autobuffer class="about-pic"></video>
+        </div>
+        <div class="about-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <img
+                src="{% static '/assets/experience.png' %}"
+                alt="Experience icon"
+                class="icon"
+              />
+              <h3>Опыт</h3>
+              <p>2+ года <a href="https://21-school.ru/" target="_blank">Школа 21</a><br />Закрыт Common core <a href="https://42.fr/en/homepage/" target="_blank">Intra</a></p>
+            </div>
+            <div class="details-container">
+              <img
+                src="{% static '/assets/education.png' %}"
+                alt="Education icon"
+                class="icon"
+              />
+              <h3>Образование</h3>
+              <p><a href="https://www.rea.ru/" target="_blank">РЭУ им. Плеханова</a>,<br />н.в. <a href="https://bmstu.ru/" target="_blank">МГТУ им. Баумана</a></p>
+            </div>
+          </div>
+          <div class="text-container">
+            <p>
+              С детства я знал, что IT будет частью моей жизни. В старшей школе
+              начал учить HTML, CSS, PHP для своего проекта.
+              Наняв репетитора, я написал свой движок для сайта. Позже обучение на грантовой
+              программе в университете занимало все мое время.
+              Однако, базовые навыки программирования позволили найти первую работу  - разработка
+              <a href="https://tcomposite.ru/" target="_blank">сайтов</a>. Далее я изучил основы Python для написания скриптов
+              и <a href="https://www.youtube.com/watch?v=UD4kPkkFNo8">ботов для корпоративных целей</a>. <br />
+              Я не боюсь пробовать что-то новое и твердо решил связать свою жизнь с IT! 
+            </p>
+          </div>
+        </div>
+      </div>
+      <img
+        src="{% static '/assets/arrow.png' %}"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#experience'"
+      />
+    </section>
+    <section id="experience">
+      <p class="section__text__p1">Мои</p>
+      <h1 class="title">Навыки</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container">
+            <h2 class="experience-sub-title">Frontend Development</h2>
+            <div class="article-container">
+              <article>
+                <img
+                  src="{% static '/assets/checkmark.png' %}"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>HTML</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="{% static '/assets/checkmark.png' %}"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>CSS</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="{% static '/assets/checkmark.png' %}"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>JQuery</h3>
+                  <p>Basic</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="{% static '/assets/checkmark.png' %}"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Figma</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="details-container">
+            <h2 class="experience-sub-title">Backend Development</h2>
+            <div class="article-container">
+              <article>
+                <img
+                  src="{% static '/assets/checkmark.png' %}"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Python</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="{% static '/assets/checkmark.png' %}"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>PostgreSQL</h3>
+                  <p>Basic</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="{% static '/assets/checkmark.png' %}"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Linux</h3>
+                  <p>Basic</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="{% static '/assets/checkmark.png' %}"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Git</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+        src="{% static '/assets/arrow.png' %}"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#projects'"
+      />
+    </section>
+    <section id="projects">
+      <p class="section__text__p1">Мои</p>
+      <h1 class="title">Проекты</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="{% static '/assets/1.png' %}"
+                alt="Project 1"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Сайт-портфолио</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="window.open('https://github.com/StanislavGens/cv_website', '_blank')"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://slavka.online/'"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="{% static '/assets/2.png' %}"
+                alt="Project 2"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">DevOps Project</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="window.open('https://youtu.be/IpcV-4jOTi0?si=vdD-fXI0u7PYw2JL&t=24', '_blank')"
+              >
+                Live Demo - YouTube
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="{% static '/assets/3.png' %}"
+                alt="Project 3"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Задачи Python</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="window.open('https://github.com/StanislavGens/python_drills', '_blank')"
+              >
+                Github
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+        src="{% static '/assets/arrow.png' %}"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#contact'"
+      />
+    </section>
+    <section id="contact">
+      <p class="section__text__p1">Мои</p>
+      <h1 class="title">Контакты</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img
+            src="{% static '/assets/email.png' %}"
+            alt="Email icon"
+            class="icon contact-icon email-icon"
+          />
+          <p><a href="mailto:stanislavgens@icloud.com">stanislavgens@icloud.com</a></p>
+        </div>
+        <div class="contact-info-container">
+          <img
+            src="{% static '/assets/telegram.png' %}"
+            alt="Telegram icon"
+            class="icon contact-icon"
+          />
+          <p><a href="https://t.me/bmelanie_school" target="_blank">Telegram</a></p>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">Обо мне</a></li>
+            <li><a href="#experience">Навыки</a></li>
+            <li><a href="#projects">Проекты</a></li>
+            <li><a href="#contact">Контакты</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright &#169; 2024. All Rights Reserved.</p>
+    </footer>
+    <script src="{% static 'script.js' %}"></script>
+  </body>
+</html>
